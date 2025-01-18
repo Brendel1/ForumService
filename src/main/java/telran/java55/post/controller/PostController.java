@@ -46,8 +46,8 @@ public class PostController {
 	}
 
 	@PutMapping("/post/{id}/like")
-	public PostDto addLike(@PathVariable String id, @RequestBody NewPostDto PostDto) {
-		return postService.addLike(id, PostDto);
+	public void addLike(@PathVariable String id) {
+		postService.addLike(id);
 	}
 
 	@PutMapping("/post/{id}/comment/{author}")
