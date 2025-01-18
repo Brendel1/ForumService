@@ -56,8 +56,8 @@ public class PostController {
 		return postService.addComment(id, author, newCommentDto);
 	}
 
-	@PutMapping("/posts/author/{user}")
-	public Iterable<PostDto> findPostsByAuthor(@PathVariable String author) {
+	@GetMapping("/posts/author/{author}")
+	public Iterable<PostDto> findPostByAuthor(@PathVariable String author) {
 		return postService.findPostsByAuthor(author);
 	}
 	
