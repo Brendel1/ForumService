@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
-import telran.java55.post.dto.DateperiodDto;
+import telran.java55.post.dto.DatePeriodDto;
 import telran.java55.post.dto.NewCommentDto;
 import telran.java55.post.dto.NewPostDto;
 import telran.java55.post.dto.PostDto;
@@ -65,10 +65,10 @@ public class PostController {
 	public Iterable<PostDto> findPostsByTags(@RequestBody List<String> tags) {
 		return postService.findPostsByTags(tags);
 	}
-	
+	 
 	@PostMapping("/posts/period")
-	public Iterable<PostDto> findPostsByPeriod(@RequestBody DateperiodDto dateperiodDto) {
+	public Iterable<PostDto> findPostsByPeriod(@RequestBody DatePeriodDto dateperiodDto) {
 		return postService.findPostsByPeriod(dateperiodDto);
 	}
-
+    
 }

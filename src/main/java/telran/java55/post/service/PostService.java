@@ -2,7 +2,7 @@ package telran.java55.post.service;
 
 import java.util.List;
 
-import telran.java55.post.dto.DateperiodDto;
+import telran.java55.post.dto.DatePeriodDto;
 import telran.java55.post.dto.NewCommentDto;
 import telran.java55.post.dto.NewPostDto;
 import telran.java55.post.dto.PostDto;
@@ -17,13 +17,13 @@ public interface PostService {
 
 	PostDto updatePost(String id, NewPostDto newPostDto);
 
-	PostDto addLike(String id, NewPostDto PostDto);
+	void addLike(String id);
 
-	List<PostDto> findPostsByAuthor(String author);
+	Iterable<PostDto> findPostsByAuthor(String author);
 
 	PostDto addComment(String id, String author, NewCommentDto newCommentDto);
 
-	Iterable<PostDto> findPostsByPeriod(DateperiodDto dateperiodDto);
+	Iterable<PostDto> findPostsByPeriod(DatePeriodDto dateperiodDto);
 
 	Iterable<PostDto> findPostsByTags(List<String> tags);
 

@@ -9,11 +9,12 @@ import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
 import telran.java55.post.dao.PostRepository;
-import telran.java55.post.dto.DateperiodDto;
+import telran.java55.post.dto.DatePeriodDto;
 import telran.java55.post.dto.NewCommentDto;
 import telran.java55.post.dto.NewPostDto;
 import telran.java55.post.dto.PostDto;
 import telran.java55.post.dto.exceptions.PostNotFoundException;
+import telran.java55.post.model.Comment;
 import telran.java55.post.model.Post;
 
 @Service
@@ -64,41 +65,53 @@ public class PostServiceImpl implements PostService {
 	}
 
 	@Override
-	public PostDto addLike(String id, NewPostDto PostDto) {
+	public void addLike(String id) {
 		Post post = postRepository.findById(id).orElseThrow(PostNotFoundException::new);
-		post.addLike();
-		post = postRepository.save(post);
-		return modelMapper.map(post, PostDto.class);
-	}
+        post.addLike();
+        postRepository.save(post);
 
-	@Override
-	public List<PostDto> findPostsByAuthor(String author) { 
-		 List<Post> posts = postRepository.findByAuthorIgnoreCase(author);
-		 if (posts.isEmpty()) {
-		        throw new PostNotFoundException();
-		    }
-		 return posts.stream()
-	                .map(post -> modelMapper.map(post, PostDto.class))
-	                .collect(Collectors.toList());
 	}
 
 
 	@Override
-	public PostDto addComment(String id, String author, NewCommentDto newCommentDto) {
-		// TODO Auto-generated method stub
-		return null;
+	public Iterable<PostDto> findPostsByAuthor(String author) {
+		return postRepository.findByAuthorIgnoreCase(author)
+				.map(p -> modelMapper.map(p, PostDto.class))
+				.toList();
 	}
 
-	@Override
-	public Iterable<PostDto> findPostsByPeriod(DateperiodDto dateperiodDto) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 
 	@Override
 	public Iterable<PostDto> findPostsByTags(List<String> tags) {
-		// TODO Auto-generated method stub
-		return null;
+		return postRepository.findByTagsInIgnoreCase(tags)
+				.map(p -> modelMapper.map(p, PostDto.class))
+				.toList();
 	}
+
+
+
+
+
+	@Override
+	public Iterable<PostDto> findPostsByPeriod(DatePeriodDto datePeriodDto) {
+		return postRepository.findByDateCreatedBetween(datePeriodDto.getDateFrom(), datePeriodDto.getDateTo())
+				.map(p -> modelMapper.map(p, PostDto.class))
+				.toList();
+	}
+	
+	@Override
+	public PostDto addComment(String id, String author, NewCommentDto newCommentDto) {
+		Post post = postRepository.findById(id).orElseThrow(PostNotFoundException::new);
+        Comment comment = new Comment(author, newCommentDto.getMessage());
+        post.addComment(comment);
+        post = postRepository.save(post);
+        return modelMapper.map(post, PostDto.class);
+	}
+
+
+
+
+
 
 }
