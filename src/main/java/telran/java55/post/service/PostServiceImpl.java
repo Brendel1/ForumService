@@ -79,17 +79,12 @@ public class PostServiceImpl implements PostService {
 				.toList();
 	}
 
-
-
 	@Override
 	public Iterable<PostDto> findPostsByTags(List<String> tags) {
 		return postRepository.findByTagsInIgnoreCase(tags)
 				.map(p -> modelMapper.map(p, PostDto.class))
 				.toList();
 	}
-
-
-
 
 
 	@Override
