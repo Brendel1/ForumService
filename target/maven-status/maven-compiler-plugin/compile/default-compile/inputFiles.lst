@@ -1,4 +1,6 @@
 C:\Users\Fedor\Desktop\JAVA\.classwork\06_Forum-Service-MongoDB_06_01_2025\06_Forum-Service-MongoDB\06_Forum-Service-MongoDB\src\main\java\telran\java55\accounting\controller\UserAccountController.java
+C:\Users\Fedor\Desktop\JAVA\.classwork\06_Forum-Service-MongoDB_06_01_2025\06_Forum-Service-MongoDB\06_Forum-Service-MongoDB\src\main\java\telran\java55\accounting\dao\AccountRepository.java
+C:\Users\Fedor\Desktop\JAVA\.classwork\06_Forum-Service-MongoDB_06_01_2025\06_Forum-Service-MongoDB\06_Forum-Service-MongoDB\src\main\java\telran\java55\accounting\dto\exceptions\UserNotFoundException.java
 C:\Users\Fedor\Desktop\JAVA\.classwork\06_Forum-Service-MongoDB_06_01_2025\06_Forum-Service-MongoDB\06_Forum-Service-MongoDB\src\main\java\telran\java55\accounting\dto\RolesDto.java
 C:\Users\Fedor\Desktop\JAVA\.classwork\06_Forum-Service-MongoDB_06_01_2025\06_Forum-Service-MongoDB\06_Forum-Service-MongoDB\src\main\java\telran\java55\accounting\dto\UserDto.java
 C:\Users\Fedor\Desktop\JAVA\.classwork\06_Forum-Service-MongoDB_06_01_2025\06_Forum-Service-MongoDB\06_Forum-Service-MongoDB\src\main\java\telran\java55\accounting\dto\UserEditDto.java
@@ -6,6 +8,7 @@ C:\Users\Fedor\Desktop\JAVA\.classwork\06_Forum-Service-MongoDB_06_01_2025\06_Fo
 C:\Users\Fedor\Desktop\JAVA\.classwork\06_Forum-Service-MongoDB_06_01_2025\06_Forum-Service-MongoDB\06_Forum-Service-MongoDB\src\main\java\telran\java55\accounting\model\Role.java
 C:\Users\Fedor\Desktop\JAVA\.classwork\06_Forum-Service-MongoDB_06_01_2025\06_Forum-Service-MongoDB\06_Forum-Service-MongoDB\src\main\java\telran\java55\accounting\model\UserAccount.java
 C:\Users\Fedor\Desktop\JAVA\.classwork\06_Forum-Service-MongoDB_06_01_2025\06_Forum-Service-MongoDB\06_Forum-Service-MongoDB\src\main\java\telran\java55\accounting\service\UserAccountService.java
+C:\Users\Fedor\Desktop\JAVA\.classwork\06_Forum-Service-MongoDB_06_01_2025\06_Forum-Service-MongoDB\06_Forum-Service-MongoDB\src\main\java\telran\java55\accounting\service\UserAccountServiceImpl.java
 C:\Users\Fedor\Desktop\JAVA\.classwork\06_Forum-Service-MongoDB_06_01_2025\06_Forum-Service-MongoDB\06_Forum-Service-MongoDB\src\main\java\telran\java55\Application.java
 C:\Users\Fedor\Desktop\JAVA\.classwork\06_Forum-Service-MongoDB_06_01_2025\06_Forum-Service-MongoDB\06_Forum-Service-MongoDB\src\main\java\telran\java55\configuration\ServiceConfiguration.java
 C:\Users\Fedor\Desktop\JAVA\.classwork\06_Forum-Service-MongoDB_06_01_2025\06_Forum-Service-MongoDB\06_Forum-Service-MongoDB\src\main\java\telran\java55\post\controller\PostController.java
