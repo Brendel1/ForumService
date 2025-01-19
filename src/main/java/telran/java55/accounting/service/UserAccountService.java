@@ -9,6 +9,8 @@ public interface UserAccountService {
 
 	UserDto register(UserRegisterDto userRegisterdto);
 
+	UserDto findUserByLogin(String login);
+
 	UserDto removeUser(String login);
 
 	UserDto getUser(String login);
@@ -18,6 +20,5 @@ public interface UserAccountService {
 	RolesDto changeRolesList(String login, String role, boolean isAddRole);
 
 	void changePassword(String name, String newPassword);
-	
 
 }
